@@ -1,0 +1,34 @@
+# API Testing - Notes App
+GET http://localhost:3000/
+
+###
+# GET : All Notes
+GET http://localhost:3000/api/notes
+
+###
+# GET : Note by ID (Pastikan ID 1 ada di DB)
+GET http://localhost:3000/api/notes/1
+
+###
+# POST : Create Note
+POST http://localhost:3000/api/notes
+Content-Type: application/json
+
+{
+  "judul": "Belajar Sequelize",
+  "isi": "Hari ini belajar menggunakan Sequelize ORM untuk mengelola database MySQL. Sangat memudahkan!"
+}
+
+###
+# PUT : Update Note (Ganti ID sesuai data di DB)
+PUT http://localhost:3000/api/notes/1
+Content-Type: application/json
+
+{
+  "judul": "Tugas 2 Prak TCC",
+  "isi": "Sudah berhasil migrasi dari raw SQL ke Sequelize ORM. Kode jadi lebih rapi dan terstruktur!"
+}
+
+###
+# DELETE : Delete Note (Ganti ID sesuai data di DB)
+DELETE http://localhost:3000/api/notes/1
