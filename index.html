@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Catatan - TCC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Notes Gemas🎀</h1>
+            <p>Manajemen data catatan praktikum TCC</p>
+        </header>
+        
+        <div class="input-section">
+            <input type="text" id="judul" placeholder="Masukkan Judul Catatan">
+            <textarea id="isi" rows="3" placeholder="Masukkan Isi Catatan"></textarea>
+            <button id="btnSimpan" onclick="saveNote()">Simpan Catatan</button>
+        </div>
+
+        <div id="notes-container">
+            </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
