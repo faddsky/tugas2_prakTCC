@@ -1,0 +1,12 @@
+{
+  "name": "notes-app-frontend",
+  "version": "1.0.0",
+  "description": "Frontend untuk aplikasi Notes",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
