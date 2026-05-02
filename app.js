@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/notes';
+const API_URL = 'https://notes-123230006-be-435877963894.us-central1.run.app/api/notes';
 let editId = null;
 
 document.addEventListener('DOMContentLoaded', loadNotes);
