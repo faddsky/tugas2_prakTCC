@@ -63,12 +63,14 @@ app.use((err, req, res, next) => {
 // 10. Sinkronisasi Database dan Jalankan Server
 const port = process.env.PORT || 3000;
 
-sequelize.sync().then(() => {
-  console.log(" Database synced successfully!");
-  app.listen(port, () => {
-    console.log(` Server running on port ${port}`);
-    console.log(` Akses di: http://localhost:${port}`);
+// Jalankan server terlebih dahulu dengan host '0.0.0.0'
+app.listen(port, '0.0.0.0', () => {
+  console.log(` Server running on port ${port}`);
+  
+  // Lakukan sinkronisasi database setelah server berhasil menyala
+  sequelize.sync().then(() => {
+    console.log(" Database synced successfully!");
+  }).catch(err => {
+    console.error(" Gagal sinkronisasi database:", err);
   });
-}).catch(err => {
-  console.error(" Gagal sinkronisasi database:", err);
 });
