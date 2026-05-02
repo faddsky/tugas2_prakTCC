@@ -12,7 +12,17 @@ const app = express();
 
 // 4. Konfigurasi CORS
 // Sesuaikan dengan origin frontend kamu agar tidak kena blokir browser
-app.use(cors({}));
+app.use(cors({
+  origin: [
+    'http://localhost', 
+    'http://localhost:5173', 
+    'http://127.0.0.1:5500', 
+    'http://localhost:3000',
+    'https://notes-fadilah-dot-b-12-488514.uc.r.appspot.com'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 // 5. Middleware
 app.use(express.json()); // Untuk membaca body berformat JSON
